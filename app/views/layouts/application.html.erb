@@ -8,18 +8,18 @@
 </head>
 <body>
 
-<ul class="navbar">
-	<li><%= link_to "Home", root_path %></li>
-	<li><%= link_to "About Us", pages_about_path %></li>
-	<li><%= link_to "Contact", pages_contact_path %></li>
-	<li><%= link_to "Features", pages_features_path %></li>
-	<li><%= link_to "FAQs", pages_faqs_path %></li>
-	<li><%= link_to "Pricing", pages_pricing_path %></li>
-	<li><%= link_to "Invoices", invoices_path %></li>
-	<li><%= link_to "Login", root_path %></li>
-</ul>
-
-	<p>Hey I'm here</p>
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "About Us", pages_about_path %></li>
+			<li><%= link_to "Contact", pages_contact_path %></li>
+			<li><%= link_to "Features", pages_features_path %></li>
+			<li><%= link_to "FAQs", pages_faqs_path %></li>
+			<li><%= link_to "Pricing", pages_pricing_path %></li>
+			<li><%= link_to "Invoices", invoices_path %></li>
+			<li><%= link_to "Login", root_path %></li>
+		</ul>
+	</div>
 
 
 <%= yield %>
