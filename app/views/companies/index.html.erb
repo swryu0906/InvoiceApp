@@ -22,9 +22,9 @@
             <td><%= company.manager %></td>
             <td><%= company.status %></td>
             <td><%= company.terms %></td>
-            <td><%= link_to 'Show', company, class: 'btn btn-mini btn-default' %></td>
-            <td><%= link_to 'Edit', edit_company_path(company), class: 'btn btn-mini btn-success' %></td>
-            <td><%= link_to 'Destroy', company, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', company, class: 'btn btn-default btn-xs' %></td>
+            <td><%= link_to 'Edit', edit_company_path(company), class: 'btn btn-success btn-xs' %></td>
+            <td><%= link_to 'Destroy', company, method: :delete, class: 'btn btn-danger btn-xs' %></td>
           </tr>
         <% end %>
       </tbody>
@@ -36,10 +36,13 @@
 
 <%= link_to 'New Company', new_company_path %>
 
-<div>
-  <h3>Import Companies</h3>
-  <%= form_tag import_companies_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Upload companies" %>
-  <% end %>
-</div>
+
+<h3>Import Companies</h3>
+<%= form_tag import_companies_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload companies", class: 'btn btn-default' %>
+<% end %>
+
+
+<h3>Download File</h3>
+<%= link_to "Report", companies_path(format: "csv"), class: 'btn btn-default' %>
