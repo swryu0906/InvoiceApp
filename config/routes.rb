@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :purchases
+  resources :invoices do
+    resources :purchases, except: [:index], controller: 'invoices/purchases'
+  end
+
   resources :employees
   resources :companies do
     collection { post :import }
@@ -18,7 +21,6 @@ Rails.application.routes.draw do
 
   get 'pages/features'
 
-  resources :invoices
 
   root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
