@@ -4,9 +4,9 @@
   <h1>Listing Invoices</h1>
 
   <div class="pull-right range-query">
-    <%= form_tag invoices_path, method: :get do %>
-      <%= text_field_tag 'search[date_from]', @search.date_from %>
-      <%= text_field_tag 'search[date_to]', @search.date_to %>
+    <%= form_tag invoices_path, method: :get, class: 'form-inline' do %>
+      <%= text_field_tag 'search[date_from]', @search.date_from, class: 'form-control' %>
+      <%= text_field_tag 'search[date_to]', @search.date_to, class: 'form-control' %>
       <%= submit_tag 'Search', class: 'btn btn-default search-btn' %>
     <% end %>
   </div>
@@ -33,7 +33,7 @@
             <td><%= invoice.date.strftime("%Y-%m-%d") %></td>
             <td><%= invoice.company %></td>
             <td><%= invoice.tax %></td>
-            <td><%= invoice.salesperson %></td>
+            <td><%= invoice.employee.name %></td>
             <td><%= invoice.status_type %></td>
             <td><%= link_to 'Show', invoice, class: 'btn btn-default btn-xs' %></td>
             <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'btn btn-success btn-xs' %></td>

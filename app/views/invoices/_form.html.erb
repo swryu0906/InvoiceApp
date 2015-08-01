@@ -31,11 +31,14 @@
       </div>
     </div>
     <div class="form-group">
-      <%= f.label :salesperson, class: 'col-sm-2 control-label' %>
+      <%= f.label "Salesperson", class: 'col-sm-2 control-label' %>
       <div class="col-sm-4">
-        <%= f.text_field :salesperson, class: 'form-control'%>      
+        <%= f.collection_select(:employee_id, Employee.all.order( :name ), :id, :name, { include_blank: true }, { class: 'form-control', multiple: false }) %>
+        
       </div>
     </div>
+
+
     <div class="form-group">
       <%= f.label "Status", class: 'col-sm-2 control-label' %>
       <div class="col-sm-4">
@@ -43,7 +46,7 @@
       </div>
     </div>
     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-2">
+      <div class="col-sm-offset-2 col-sm-4">
         <%= f.submit 'Submit', class: 'btn btn-default' %>
       </div>
     </div>
